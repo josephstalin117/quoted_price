@@ -19,6 +19,8 @@ class Price(db.Model):
     description = db.Column(db.String(255))
     price = db.Column(db.String(11))
     unit = db.Column(db.String(11))
+    specification = db.Column(db.String(255))
+    source = db.Column(db.String(255))
     #unit = db.Column(db.String(11))
     #description = db.Column(db.String(50))
     #isAdmin = db.Column(db.Boolean, doc='是否管理员', default=False)
