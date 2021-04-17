@@ -7,8 +7,10 @@ from flask import render_template
 import config
 import os
 
+# 创建Flask实例对象
 app = Flask(__name__)
 app.config.from_object(config)
+# 获取SQLAlchemy实例对象，接下来就可以使用对象调用数据
 db = SQLAlchemy(app)
 
 
@@ -26,4 +28,6 @@ def show():
     return render_template('show.html', items=price_items)
 
 if __name__ == '__main__':
-    app.run('0.0.0.0')
+    #启动服务，设置服务器地址和端口，0.0.0.0表示接收所有地址发来的请求
+    #app.run('0.0.0.0')
+    app.run(debug=True)
